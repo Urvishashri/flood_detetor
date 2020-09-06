@@ -38,7 +38,7 @@ void loop() {
   Serial.println(sensorValue);
   Firebase.setFloat ("Flood_sensor_value",sensorValue);
   webhook.trigger();
-  delay(2000);
+  delay(1500);
   Serial.println("Message Sent");
   }
 }
