@@ -7,7 +7,7 @@
 #define FIREBASE_HOST "flood-detection.firebaseio.com"
 int threshold_phaseone=400;
 int threshold_phasetwo=800;
-int threshold_phasethree=1050;
+int threshold_phasethree=1080;
 #define your_url "http://maker.ifttt.com/trigger/flood_detection/with/key/cGM9Nd9B2dUhiCcEXr0Y3P3SAhCLPFS-hg0ljrwg_3X"
 #define ssid "R K S"
 #define pass "abcd#1234"
@@ -33,12 +33,12 @@ void loop() {
   int sensorValue=analogRead(A0);
   if(sensorValue>threshold_phaseone&&sensorValue<threshold_phasetwo)
   {
-  Serial.println("Critical phase one value");
-  Serial.println("Sending Message");
+  Serial.println("Critical phase one value!");
+  Serial.println("Sending Message!");
   Serial.println(sensorValue);
-  Firebase.setFloat ("Flood_sensor_value",sensorValue);
+  Firebase.setFloat ("Flood_sensor_value!",sensorValue);
   webhook.trigger();
   delay(2000);
-  Serial.println("Message Sent");
+  Serial.println("Message Sent!");
   }
 }
